@@ -2,7 +2,6 @@
 
 namespace VRag\NotifierBundle\Service\Builder;
 
-
 use VRag\NotifierBundle\Service\NotificationInterface;
 
 interface NotificationBuilderInterface
