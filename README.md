@@ -134,3 +134,23 @@ class TestCommand extends Command
     $operator->deliver();
     // ***
 ```
+#### Building notification with Twig
+```php
+    // Autowire
+    // VRag\NotifierBundle\Service\Manager;
+    // VRag\NotifierBundle\Service\Builder\TwigNotificationBuilder;
+    public function testAction(Manager $manager, TwigNotificationBuilder $builder): int
+    {
+        $notification = $this->builder->build('email.html.twig');
+
+        $this->manager
+            ->getOperator(Manager::EMAIL)
+            ->setNotification($notification)
+            ->setRecipients(['sample@mail.com','sample2@mail.com'])
+            ->setOptions([
+                'subject' => 'Test subject',
+                'from' => 'sample3@mail.com',
+            ])
+            ->deliver();
+    }
+```
