@@ -43,6 +43,17 @@ v_rag_notifier:
     # Twilio Token (live blank if not required)
     token: '%env(TWILIO_TOKEN)%'
 ```
+2. Define the bundle in the ***config/bundles.php*** file:
+```php
+<?php
+
+return [
+    //~~~
+    VRag\NotifierBundle\VRagNotifierBundle::class => ['all' => true],
+    //~~~
+];
+
+```
 ***
 Basic usage
 -----------------------------------
