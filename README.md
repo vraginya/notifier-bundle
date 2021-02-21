@@ -1,11 +1,14 @@
-# notifier-bundle
+notifier-bundle
+=====================
 Symfony 4 bundle for sending notifications
 
-#Requirements
+Requirements
+-----------------------------------
 * Php 7.4
 * Symfony 4 application
-
-#Installation
+***
+Installation
+-----------------------------------
 1. Add a repository to the repositories section in your composer.json file
 ```json
 "repositories": [
@@ -19,7 +22,9 @@ Symfony 4 bundle for sending notifications
 ```bash
 composer require vrag/notifier:dev-master
 ```
-#Set up
+***
+Set up
+-----------------------------------
 1. Put ***v_rag_notifier.yaml*** file to the directory _config/packages_ in yor symfony 4 application:
 ```yaml
 v_rag_notifier:
@@ -38,7 +43,9 @@ v_rag_notifier:
     # Twilio Token (live blank if not required)
     token: '%env(TWILIO_TOKEN)%'
 ```
-#Basic usage
+***
+Basic usage
+-----------------------------------
 ####Fluent interface
 ```php
 <?php
