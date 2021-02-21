@@ -74,7 +74,8 @@ class TestCommand extends Command
     protected static $defaultName = 'Test';
 
     private $manager;
-
+    
+    // Inject the Manager service
     public function __construct(Manager $manager)
     {
         $this->manager = $manager;
@@ -86,6 +87,7 @@ class TestCommand extends Command
     {
         $notification = new Notification('HELLO WORLD!');
 
+        //Send email and sms
         $operator = $this->manager
             ->getOperator(Manager::EMAIL)
             ->setNotification($notification)
