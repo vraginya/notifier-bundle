@@ -57,7 +57,7 @@ return [
 ***
 Basic usage
 -----------------------------------
-###Fluent interface
+#### Fluent interface
 ```php
 <?php
 
@@ -107,7 +107,7 @@ class TestCommand extends Command
     }
 }
 ```
-####Setting parameters
+#### Setting parameters
 ```php
 <?php
     // ***
