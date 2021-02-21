@@ -109,7 +109,7 @@ class TestCommand extends Command
     }
 }
 ```
-#### Setting parameters
+#### Using getOperator method with parameters
 ```php
 <?php
     // ***
