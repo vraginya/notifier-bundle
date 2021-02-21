@@ -1,0 +1,26 @@
+services:
+  _defaults:
+    autowire: true
+    autoconfigure: true
+
+  vrag_notifier.manager:
+    class: VRag\NotifierBundle\Service\Manager
+    autowire: true
+
+  VRag\NotifierBundle\Service\Manager: '@vrag_notifier.manager'
+
+  vrag_notifier.mailer_transport:
+    class: VRag\NotifierBundle\Service\Transport\Email\MailerTransport
+  VRag\NotifierBundle\Service\Transport\Email\MailerTransport: '@vrag_notifier.mailer_transport'
+  VRag\NotifierBundle\Service\Transport\Email\EmailTransportInterface: ~
+
+  vrag_notifier.twilio_transport:
+    class: VRag\NotifierBundle\Service\Transport\Sms\TwilioTransport
+    arguments:
+      - '%twilio_sid%'
+      - '%twilio_token%'
+  VRag\NotifierBundle\Service\Transport\Sms\TwilioTransport: '@vrag_notifier.twilio_transport'
+  VRag\NotifierBundle\Service\Transport\Sms\SmsTransportInterface: ~
+
+  VRag\NotifierBundle\Service\Builder\NotificationBuilderInterface: ~
+  VRag\NotifierBundle\Service\Builder\TwigNotificationBuilder: ~
