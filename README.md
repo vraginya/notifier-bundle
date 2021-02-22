@@ -141,7 +141,10 @@ class TestCommand extends Command
     // VRag\NotifierBundle\Service\Builder\TwigNotificationBuilder;
     public function testAction(Manager $manager, TwigNotificationBuilder $builder): int
     {
-        $notification = $this->builder->build('email.html.twig');
+        $notification = $this->builder->build('email.html.twig', [
+            'param1' => 'Hello', 
+            'param2' => 'World'
+        ]);
 
         $this->manager
             ->getOperator(Manager::EMAIL)
